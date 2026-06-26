@@ -59,7 +59,7 @@ wmo_label() {
 # ── wind direction degrees → compass ─────────────────────────────────────────
 compass() {
   local dirs=(N NNE NE ENE E ESE SE SSE S SSW SW WSW W WNW NW NNW)
-  local idx=$(( ( ($1 + 11) % 360 ) / 22 ))
+  local idx=$(( ( ($1 + 11) % 360 ) / 22 % 16 ))
   echo "${dirs[$idx]}"
 }
 
